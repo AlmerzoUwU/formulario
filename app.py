@@ -6,10 +6,10 @@ app = Flask(__name__)
 # Conexión a la base de datos MySQL
 def init_db():
     conn = mysql.connector.connect(
-        host="yourusername.mysql.pythonanywhere-services.com",  # Cambia esto con el host que te dio PythonAnywhere
-        user="yourusername",  # Tu nombre de usuario de PythonAnywhere
-        password="yourpassword",  # Tu contraseña de MySQL
-        database="mibasededatos"  # El nombre de tu base de datos en MySQL
+        host="almerzouwu.mysql.pythonanywhere-services.com",  # Dirección del host
+        user="almerzouwu",  # Nombre de usuario
+        password="yourpassword",  # Aquí debes colocar tu contraseña
+        database="mibasededatos"  # Nombre de la base de datos
     )
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
@@ -33,10 +33,10 @@ def submit():
 
     # Guardar en la base de datos MySQL
     conn = mysql.connector.connect(
-        host="yourusername.mysql.pythonanywhere-services.com",  # Cambia esto con el host que te dio PythonAnywhere
-        user="yourusername",  # Tu nombre de usuario de PythonAnywhere
-        password="yourpassword",  # Tu contraseña de MySQL
-        database="mibasededatos"  # El nombre de tu base de datos en MySQL
+        host="almerzouwu.mysql.pythonanywhere-services.com",  # Dirección del host
+        user="almerzouwu",  # Nombre de usuario
+        password="yourpassword",  # Aquí debes colocar tu contraseña
+        database="mibasededatos"  # Nombre de la base de datos
     )
     cursor = conn.cursor()
     cursor.execute("INSERT INTO usuarios (nombre, apellido) VALUES (%s, %s)", (nombre, apellido))
@@ -54,10 +54,10 @@ def form_submitted():
 @app.route('/usuarios')
 def usuarios():
     conn = mysql.connector.connect(
-        host="yourusername.mysql.pythonanywhere-services.com",  # Cambia esto con el host que te dio PythonAnywhere
-        user="yourusername",  # Tu nombre de usuario de PythonAnywhere
-        password="yourpassword",  # Tu contraseña de MySQL
-        database="mibasededatos"  # El nombre de tu base de datos en MySQL
+        host="almerzouwu.mysql.pythonanywhere-services.com",  # Dirección del host
+        user="almerzouwu",  # Nombre de usuario
+        password="yourpassword",  # Aquí debes colocar tu contraseña
+        database="mibasededatos"  # Nombre de la base de datos
     )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM usuarios")
